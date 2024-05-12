@@ -3,7 +3,6 @@ import sys, os, shutil, subprocess
 from common import bot
 from dotenv import load_dotenv
 
-
 running_processes = {}
 
 @bot.command()
@@ -350,4 +349,7 @@ def authenticatedUser(user_id):
 import qol
 import test
 
+
+load_dotenv()
+BOT_TOKEN = os.getenv('BOT_TOKEN')
 bot.run(BOT_TOKEN)

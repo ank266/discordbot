@@ -1,0 +1,30 @@
+Specification:
+I want to be able to code in python and put that code in the server straight from the discord chat.
+Features to achieve this:
+-Being able to add code to the file
+-Being able to update code in the file
+-Being able to delete code in the file
+
+More detailed explainations:
+Being able to add code to the file
+-being able to add a new file and add code to it
+-being able to add code that requires imports and than also be able to install imports from the discord chat
+
+Being able to update code in the file
+-Want to have an efficient way to be able to add code to certain lines while keeping the resting of the file intact
+-Want a way to update file with new code
+-Want a way to be able to replace the file
+
+Being able to delete code in the file
+-Want to be able to delete certain files and certain lines of code from the system
+-Risk in deleting file is that it will be gone so need a way to do a rollback on it
+-Want to be able to display the error that is recieved when the code is added/not working
+
+Features for security/security concerns:
+-(  Make sure that only the admin and the other person can view the code/files using the viewCode   )
+-Make sure only those with permission can add code to the server and only those with permission can restart the server
+-Store a previous version and be able to go back to that version(maybe even store the last 5 versions)
+
+-Write $help command to give all the commands
+-Write a way to backup the working copy on github
+-Write a way to store who made the changes in a txt(make a command to be able to take commit)

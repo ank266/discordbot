@@ -1,0 +1,12 @@
+Error on Sun May 12 17:23:02 2024:
+[2024-05-12 14:17:29] [INFO    ] discord.client: logging in using static token
+[2024-05-12 14:17:30] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: a1c5f3bf3691c5f4eb73394af200ab3a).
+[2024-05-12 16:16:32] [INFO    ] discord.client: logging in using static token
+[2024-05-12 16:16:33] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 6afc0cfc3bbba277b3a66e553b29c3ec).
+Traceback (most recent call last):
+  File "C:\Users\anura\Desktop\Projects\REALPROJECTS\DiscordBot\main.py", line 353, in <module>
+    bot.run(BOT_TOKEN)
+            ^^^^^^^^^
+NameError: name 'BOT_TOKEN' is not defined
+
+

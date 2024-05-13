@@ -1,15 +1,15 @@
-Error on Sun May 12 21:34:16 2024:
-[2024-05-12 21:30:47] [INFO    ] discord.client: logging in using static token
-[2024-05-12 21:30:47] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 46c5fb27be26b087372ee71301d0075a).
-[2024-05-12 21:31:39] [INFO    ] discord.client: logging in using static token
-[2024-05-12 21:31:39] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 2a28f2699d41f11da095ca22f6068c32).
-[2024-05-12 21:33:15] [INFO    ] discord.client: logging in using static token
-[2024-05-12 21:33:16] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: fa822871e13cb37f4601b38464c247e2).
+Error on Sun May 12 21:43:07 2024:
+[2024-05-12 21:34:29] [INFO    ] discord.client: logging in using static token
+[2024-05-12 21:34:30] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 0284e4762f1312d35c3eaa9cf7f8bc8d).
+[2024-05-12 21:38:00] [INFO    ] discord.client: logging in using static token
+[2024-05-12 21:38:01] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: ce51c2e33245fc69d66217a5f96e7435).
+[2024-05-12 21:42:28] [INFO    ] discord.client: logging in using static token
+[2024-05-12 21:42:28] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 60e1e8668afc257f9649814fd3ee3558).
 Traceback (most recent call last):
   File "C:\Users\anura\Desktop\Projects\REALPROJECTS\DiscordBot\main.py", line 350, in <module>
     import test
   File "C:\Users\anura\Desktop\Projects\REALPROJECTS\DiscordBot\test.py", line 16, in <module>
-    ferstgtset
-NameError: name 'ferstgtset' is not defined
+    greggses
+NameError: name 'greggses' is not defined
 
 

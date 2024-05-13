@@ -346,6 +346,20 @@ def authenticatedUser(user_id):
         else:
             return True
 
+
+@bot.command()
+def commit_and_push_changes(message='Backup commit'):
+    """Commits all changes in the directory and pushes them to GitHub."""
+    try:
+        subprocess.run(['git', 'add', '.'], check=True)
+        subprocess.run(['git', 'commit', '-m', message], check=True)
+        subprocess.run(['git', 'tag', 'last_known_good'], check=True)
+        subprocess.run(['git', 'push'], check=True)
+        subprocess.run(['git', 'push', '--tags'], check=True)
+        await message.send("Changes and tags pushed successfully.")
+    except subprocess.CalledProcessError as e:
+        await message.send(f"Failed to push changes or tags: {e}")
+
 import qol
 import test
 

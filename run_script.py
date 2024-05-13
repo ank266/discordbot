@@ -22,8 +22,12 @@ def run_script():
             with open(error_log_path, "w") as error_file:
                 error_file.write(f"Error on {time.strftime('%c')}:\n{error_message}\n\n")
 
-        if process.returncode != 0:
-            print("Script crashed or exited with errors, attempting to revert from GitHub...")
+        if process.returncode == 0:
+            print("Script executed successfully, committing changes...")
+            commit_and_push_changes('Backup commit after successful run')
+        else:
+            print("Script crashed or exited with errors, skipping commit...")
+            # Implement logic to checkout to a known good commit or tag
             revert_to_last_working_state()
 
         # Wait a bit before potentially restarting or after reverting
@@ -32,31 +36,26 @@ def run_script():
 def commit_and_push_changes(message='Backup commit'):
     """Commits all changes in the directory and pushes them to GitHub."""
     try:
-        # Add all changed files to the staging area
         subprocess.run(['git', 'add', '.'], check=True)
-
-        # Commit the changes
         subprocess.run(['git', 'commit', '-m', message], check=True)
-
-        # Push the changes to GitHub
+        subprocess.run(['git', 'tag', 'last_known_good'], check=True)
         subprocess.run(['git', 'push'], check=True)
-
-        print("Changes pushed to GitHub successfully.")
+        subprocess.run(['git', 'push', '--tags'], check=True)
+        print("Changes and tags pushed successfully.")
     except subprocess.CalledProcessError as e:
-        print(f"Failed to push changes: {e}")
+        print(f"Failed to push changes or tags: {e}")
+
 
 def revert_to_last_working_state():
-    """Reverts the local project to the last state committed on GitHub."""
+    """Reverts the local project to the last state committed on GitHub marked as stable."""
     try:
-        # Reset local changes
-        subprocess.run(['git', 'reset', '--hard'], check=True)
-
-        # Pull the latest changes from GitHub
-        subprocess.run(['git', 'pull'], check=True)
-
-        print("Reverted to the last working state from GitHub.")
+        subprocess.run(['git', 'fetch', '--tags'], check=True)
+        subprocess.run(['git', 'reset', '--hard', 'last_known_good'], check=True)
+        subprocess.run(['git', 'clean', '-df'], check=True)  # Remove untracked files and directories
+        print("Reverted to the last known good state from Git.")
     except subprocess.CalledProcessError as e:
-        print(f"Failed to revert to the last working state: {e}")
+        print(f"Failed to revert to the last known good state: {e}")
+
 
 
 if __name__ == "__main__":

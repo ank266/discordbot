@@ -13,4 +13,3 @@ async def hello(ctx):
     await ctx.send('hello')
 
 print("hello")
-ferstgtset

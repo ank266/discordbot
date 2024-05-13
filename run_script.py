@@ -22,9 +22,7 @@ def run_script():
             with open(error_log_path, "w") as error_file:
                 error_file.write(f"Error on {time.strftime('%c')}:\n{error_message}\n\n")
 
-        if process.returncode == 0:
-            commit_and_push_changes('Backup commit after successful run')
-        else:
+        if process.returncode != 0:
             print("Script crashed or exited with errors, attempting to revert from GitHub...")
             revert_to_last_working_state()
 

@@ -348,7 +348,7 @@ def authenticatedUser(user_id):
 
 
 @bot.command()
-def commit_and_push_changes(message='Backup commit'):
+async def commit_and_push_changes(message='Backup commit'):
     """Commits all changes in the directory and pushes them to GitHub."""
     try:
         subprocess.run(['git', 'add', '.'], check=True)

@@ -1,12 +1,36 @@
-Error on Sun May 12 17:23:02 2024:
-[2024-05-12 14:17:29] [INFO    ] discord.client: logging in using static token
-[2024-05-12 14:17:30] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: a1c5f3bf3691c5f4eb73394af200ab3a).
-[2024-05-12 16:16:32] [INFO    ] discord.client: logging in using static token
-[2024-05-12 16:16:33] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 6afc0cfc3bbba277b3a66e553b29c3ec).
+Error on Sun May 12 21:11:58 2024:
+[2024-05-12 17:27:03] [INFO    ] discord.client: logging in using static token
+[2024-05-12 17:27:04] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 92479613c7775a5d3beee8774a60cc68).
+[2024-05-12 19:02:20] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 92479613c7775a5d3beee8774a60cc68.
+[2024-05-12 19:23:58] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 92479613c7775a5d3beee8774a60cc68.
+[2024-05-12 20:28:38] [ERROR   ] discord.ext.commands.bot: Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "commandLine" is not found
+Exception in thread Thread-7 (_readerthread):
 Traceback (most recent call last):
-  File "C:\Users\anura\Desktop\Projects\REALPROJECTS\DiscordBot\main.py", line 353, in <module>
-    bot.run(BOT_TOKEN)
-            ^^^^^^^^^
-NameError: name 'BOT_TOKEN' is not defined
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\Lib\threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\Lib\threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\Lib\subprocess.py", line 1599, in _readerthread
+    buffer.append(fh.read())
+                  ^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x90 in position 1767410: character maps to <undefined>
+[2024-05-12 21:08:46] [ERROR   ] discord.ext.commands.bot: Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "appendTo" is not found
+[2024-05-12 21:08:57] [ERROR   ] discord.ext.commands.bot: Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "appendTo" is not found
+[2024-05-12 21:09:54] [ERROR   ] discord.ext.commands.bot: Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "appendTo" is not found
+[2024-05-12 21:11:16] [INFO    ] discord.client: logging in using static token
+[2024-05-12 21:11:16] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 3d3ab01eef9c6c2d114cf9b2eae40f93).
+Traceback (most recent call last):
+  File "C:\Users\anura\Desktop\Projects\REALPROJECTS\DiscordBot\main.py", line 350, in <module>
+    import test
+  File "C:\Users\anura\Desktop\Projects\REALPROJECTS\DiscordBot\test.py", line 16, in <module>
+    fesfefesfs
+NameError: name 'fesfefesfs' is not defined
 
 

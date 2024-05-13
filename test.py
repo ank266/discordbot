@@ -12,5 +12,5 @@ async def java_add(ctx, num1: float, num2: float):
 async def hello(ctx):
     await ctx.send('hello')
 
-print('Hello')
-fesfefesfs
+print("hello")
+ferstgtset

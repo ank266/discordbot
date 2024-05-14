@@ -11,5 +11,3 @@ async def java_add(ctx, num1: float, num2: float):
 @bot.command()
 async def hello(ctx):
     await ctx.send('hello')
-
-print("hello")

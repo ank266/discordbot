@@ -28,3 +28,5 @@ Features for security/security concerns:
 -Write $help command to give all the commands
 -Write a way to backup the working copy on github
 -Write a way to store who made the changes in a txt(make a command to be able to take commit)
+
+fix error file output and show the output of the original script

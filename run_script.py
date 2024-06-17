@@ -46,7 +46,8 @@ def commit_and_push_changes(message='Backup commit'):
 def revert_to_last_working_state():
     """Reverts the local project to the last state committed on GitHub marked as stable."""
     try:
-        subprocess.run(['git', 'reset', '--hard', '5daa0cd'], check=True)
+        subprocess.run(['git', 'reset', '--hard', 'HEAD'], check=True)
+        #5daa0cd
         # subprocess.run(['git', 'clean', '-df'], check=True)  # Remove untracked files and directories
         print("Reverted to the last known good state from Git.")
         time.sleep(15)

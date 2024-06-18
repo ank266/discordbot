@@ -243,25 +243,40 @@ async def uploadFile(ctx, *, force: str = ''):
 async def runCommand(ctx, *, command: str):
     user_id = str(ctx.author.id)
     if not authenticatedUser(user_id):
-        await message.send("Not Authorized.")
+        await ctx.send("Not Authorized.")
         return
 
-    process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    try:
+        process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        stdout, stderr = process.communicate()
 
-    # Wait for the process to complete and capture output/errors
-    stdout, stderr = process.communicate()
+        output_message = ""
+        if stdout:
+            output_message += f"**Output:**\n```\n{stdout.strip()}\n```"
+        if stderr:
+            output_message += f"\n**Errors:**\n```\n{stderr.strip()}\n```"
 
-    output_message = ""
-    if stdout:
-        output_message += f"**Output:**\n```\n{stdout.strip()}\n```"
-    if stderr:
-        output_message += f"\n**Errors:**\n```\n{stderr.strip()}\n```"
+        if len(output_message) > 2000:
+            # Write the output to a file
+            output_file_path = "command_output.txt"
+            with open(output_file_path, "w") as output_file:
+                output_file.write(stdout)
+                output_file.write("\n")
+                output_file.write(stderr)
 
-    # Ensuring a message is always sent, even if empty
-    if not output_message.strip():
-        output_message = "The command executed successfully with no output."
+            # Send the file as an attachment
+            await ctx.send("The output is too long to display. Here is the output file:", file=discord.File(output_file_path))
 
-    await ctx.send(output_message)
+            # Clean up the file after sending
+            os.remove(output_file_path)
+        else:
+            if not output_message.strip():
+                output_message = "The command executed successfully with no output."
+            await ctx.send(output_message)
+    except Exception as e:
+        await ctx.send(f"Failed to execute command: {e}")
+
+        
 
 @bot.command()
 async def stop(ctx, file_name: str):

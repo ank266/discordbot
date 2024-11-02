@@ -4,6 +4,7 @@ import discord
 import random
 from discord.ui import Select, View
 from dotenv import load_dotenv
+import os
 
 
 @bot.command()
@@ -11,10 +12,10 @@ async def rm(message):
     load_dotenv()
     MAIN_CHAT_ID = os.getenv('MAIN_CHAT_ID')
     NORMAL_CHAT_ID = os.getenv('NORMAL_CHAT_ID')
-    if message.channel.id == MAIN_CHAT_ID:
+    if message.channel.id == int(NORMAL_CHAT_ID):
         return
-
-    target_channel_id = NORMAL_CHAT_ID
+    
+    target_channel_id = int(MAIN_CHAT_ID)
     channel = bot.get_channel(target_channel_id)
 
     allmes = []

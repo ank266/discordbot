@@ -29,6 +29,10 @@ def read_default_channel_to_message_to():
     return read_values_from_settings(4)
 
 
+def read_default_channel_to_send_deleted_message_to():
+    return read_values_from_settings(5)[0]
+
+
 def add_to_editors(id):
     add_id_to_settings(id, 1)
 

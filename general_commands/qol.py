@@ -3,11 +3,12 @@ from datetime import datetime
 import discord
 import random
 from discord.ui import Select, View
+from settings.read_write_data_storage_files import read_default_channel_to_send_deleted_message_to
 
 
 @bot.event
 async def on_message_delete(message):
-    channel = bot.get_channel(698077464139923496)
+    channel = bot.get_channel(read_default_channel_to_send_deleted_message_to())
     if(len(message.content) == 0):
         display = message.attachments[0]
     else:
@@ -31,7 +32,7 @@ async def on_message_delete(message):
 
 @bot.event
 async def on_message_edit(before, after):
-    if(before.author.id == 896157997309497354):
+    if(before.author.id == bot.user.id):
         return
     
     embed = discord.Embed(
@@ -46,7 +47,7 @@ async def on_message_edit(before, after):
         inline=True
     )
 
-    channel = bot.get_channel(698077464139923496)
+    channel = bot.get_channel(read_default_channel_to_send_deleted_message_to())
     await channel.send(embed=embed)
 
 

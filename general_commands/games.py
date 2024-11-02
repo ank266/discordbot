@@ -3,13 +3,18 @@ from datetime import datetime
 import discord
 import random
 from discord.ui import Select, View
+from dotenv import load_dotenv
+
 
 @bot.command()
 async def rm(message):
-    if message.channel.id == 963679769118007356:
+    load_dotenv()
+    MAIN_CHAT_ID = os.getenv('MAIN_CHAT_ID')
+    NORMAL_CHAT_ID = os.getenv('NORMAL_CHAT_ID')
+    if message.channel.id == MAIN_CHAT_ID:
         return
 
-    target_channel_id = 698074556090417164
+    target_channel_id = NORMAL_CHAT_ID
     channel = bot.get_channel(target_channel_id)
 
     allmes = []

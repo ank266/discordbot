@@ -1,3 +1,0 @@
-find how much resources the program takes
-
-make a way to be able to see the diagnostics and the resources being used(and have been used on average)

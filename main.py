@@ -11,6 +11,7 @@ import ai_integration_files.ai_commands
 import youtube_integration_files.youtube_commands
 import voicechat_integration_files.voicechat_commands
 import settings.change_settings_from_bot
+import general_commands.games
 
 running_processes = {}
 

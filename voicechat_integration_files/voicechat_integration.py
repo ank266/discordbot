@@ -46,7 +46,6 @@ class SpeechRecognitionSink(voice_recv.AudioSink):
         """Triggered when a user starts speaking."""
         lower_music_volume(self.ctx)
         if member.id in self.target_users:
-            # print(f"{member.name} started speaking.")
             self.recording_active = True
 
     @voice_recv.AudioSink.listener()
@@ -54,7 +53,6 @@ class SpeechRecognitionSink(voice_recv.AudioSink):
         """Triggered when a user stops speaking."""
         restore_music_volume(self.ctx)
         if member.id in self.target_users:
-            # print(f"{member.name} stopped speaking.")
             self.recording_active = False
 
             if self.audio_buffer:
@@ -68,7 +66,6 @@ class SpeechRecognitionSink(voice_recv.AudioSink):
         try:
             if audio_data.get_wav_data().strip():
                 text = convert_audio_to_text_using_google_speech(audio_data)
-                # print(f"Recognized from {user.name}: {text}")
                 select_action_to_take_based_on_text(self.ctx, text, user)
         except sr.UnknownValueError:
             print(f"Could not understand audio from {user.name}")

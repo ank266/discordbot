@@ -27,10 +27,8 @@ def run_script():
             commit_and_push_changes('Backup commit after successful run')
         else:
             print("Script crashed or exited with errors, skipping commit...")
-            # Implement logic to checkout to a known good commit or tag
             revert_to_last_working_state()
 
-        # Wait a bit before potentially restarting or after reverting
         time.sleep(15)
 
 def commit_and_push_changes(message='Backup commit'):
@@ -47,8 +45,6 @@ def revert_to_last_working_state():
     """Reverts the local project to the last state committed on GitHub marked as stable."""
     try:
         subprocess.run(['git', 'reset', '--hard', 'HEAD'], check=True)
-        #5daa0cd
-        # subprocess.run(['git', 'clean', '-df'], check=True)  # Remove untracked files and directories
         print("Reverted to the last known good state from Git.")
         time.sleep(15)
     except subprocess.CalledProcessError as e:

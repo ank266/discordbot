@@ -1,7 +1,7 @@
 # Discordbot
 
 ## Overview
-A discord bot made in python to increse the quality of life of the users in the discord servers. It can automatically join the voice calls and use speech recognition to interact with users in voice calls for a hands free experience. The bot can join calls, listen and speak using Gemini AI. It also has some games, plays music and has tools that help with moderating. Special assigned users can also edit the code to add functionality straight from the chat.
+A discord bot made in python to increase the quality of life of the users in the discord servers. It can automatically join the voice calls and use speech recognition to interact with users in voice calls for a hands free experience. The bot can join calls, listen and speak using Gemini AI. It also has some games, plays music and has tools that help with moderating. Special assigned users can also edit the code to add functionality straight from the chat.
 
 ## Features
 ### Voice Channel Integration
@@ -25,6 +25,7 @@ A discord bot made in python to increse the quality of life of the users in the 
 
 ### Server Code Editor Tools
 - Allows people with editing permisson to be able to code and add functionality to the bot through discord chat easily using built in commands or commands of the system they are running the server on and be able to run those changes.
+- Revert the changes back to a safe commit if the new version causes the program to crash and report the error.
 
 ## Getting Started
 ### Prerequisites
@@ -59,8 +60,11 @@ Channel to send deletes and edits to = channel_to_send_deleted_and_edited_messag
 To start the bot, run:
   `python run_script.py`
 ## Usage
-- Run the commands $commands for all commands, $ecommands for bot editing commands, $vcommands for the voice call speech commands for more insight on the commands.
+- Run the commands $commands for a description all general commands, $ecommands for bot editing commands, $vcommands for the voice call speech commands for more insight on the commands.
 - Or visit the general_commands/qol.py file and scroll to the commands functions for help with the commands.
+
+- Example code `$askGem how are you` to so ask gemini 'how are you'.
+- Example code `clearHistory` to clear the history of the chat with gemini.
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 ## Contribution Guidelines

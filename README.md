@@ -1,7 +1,7 @@
 # Discordbot
 
 ## Overview
-A discord bot made in python that uses speech recognition and text to speech to interact with users in voice calls and text. The bot can join calls, listen and speak using Gemini AI. It also has some games, plays music and has tools that help with moderating. Special assigned users can also edit the code to add functionality straight from the chat.
+A discord bot made in python to increse the quality of life of the users in the discord servers. It can automatically join the voice calls and use speech recognition to interact with users in voice calls for a hands free experience. The bot can join calls, listen and speak using Gemini AI. It also has some games, plays music and has tools that help with moderating. Special assigned users can also edit the code to add functionality straight from the chat.
 
 ## Features
 ### Voice Channel Integration
@@ -61,3 +61,9 @@ To start the bot, run:
 ## Usage
 - Run the commands $commands for all commands, $ecommands for bot editing commands, $vcommands for the voice call speech commands for more insight on the commands.
 - Or visit the general_commands/qol.py file and scroll to the commands functions for help with the commands.
+## License
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+## Contribution Guidelines
+If you have any suggestions or want to address any issues that you encounter, please open an issue to do so. If you have any changes so add than please take appropriate actions (fork the project and create a new branch, etc.) and open a pull request to do so.
+## Contact
+For any questions or feedback, please reach out via anuragkhare97@gmail.com or open an issue on Github.

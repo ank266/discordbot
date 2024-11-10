@@ -56,6 +56,7 @@ Join Call with Users = user_id_of_people_to_join_the_call_with
 Channel to send message to = channel_to_send_voice_call_message_to
 Channel to send deletes and edits to = channel_to_send_deleted_and_edited_messages_to
 ```
+6. Install ffmpeg from `https://www.ffmpeg.org/download.html` and change the location of the ffmpeg.exe executable file in voicechat_integration.py function play_audio_file(ctx).
 ### Running the Bot
 To start the bot, run:
   `python run_script.py`
